@@ -33,17 +33,17 @@ private Map<String,ProcessWork> processMap = new ConcurrentHashMap<String, Proce
 
         UUID uuid = UUID.randomUUID();
         String randomFolderName = uuid.toString();
-        displayLog("Opening new bot: poster_" + (processMap.size() + 1) + ".exe");
+        displayLog("Opening new bot: mailbot_" + (processMap.size() + 1) + ".exe");
         try {
             crateDir("res/" + randomFolderName);
             copyFolder("res/main_file", "res/" + randomFolderName);
-            renameFile("res/" + randomFolderName + "/poster.exe", "res/" + randomFolderName + "/poster_" + (processMap.size() + 1) + ".exe");
-            renameFile("res/" + randomFolderName + "/poster.lap", "res/" + randomFolderName + "/poster_" + (processMap.size() + 1) + ".lap");
+            renameFile("res/" + randomFolderName + "/mailbot.exe", "res/" + randomFolderName + "/mailbot_" + (processMap.size() + 1) + ".exe");
+            renameFile("res/" + randomFolderName + "/mailbot.lap", "res/" + randomFolderName + "/mailbot_" + (processMap.size() + 1) + ".lap");
 
             ProcessWork processWork = new ProcessWork();
             processWork.setRandomUUId(randomFolderName);
-            processWork.setBotName("poster_" + (processMap.size() + 1) + ".exe");
-            openApplicaiton("res/" + randomFolderName + "/poster_" + (processMap.size() + 1) + ".exe", processWork);
+            processWork.setBotName("mailbot_" + (processMap.size() + 1) + ".exe");
+            openApplicaiton("res/" + randomFolderName + "/mailbot_" + (processMap.size() + 1) + ".exe", processWork);
 
             displayLog("poster_" + (processMap.size()) + ".exe BOT Opened");
         } catch (IOException ex) {
